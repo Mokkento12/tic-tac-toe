@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: linear-gradient(45deg, #0085ff, #ff1458);
+}
+
+.board {
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.board .drop-box {
+	position: relative;
+	width: 140px;
+	height: 140px;
+	border-right: 4px solid #fff;
+	border-bottom: 4px solid #fff;
+	padding: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.board .drop-box:nth-child(3),
+.board .drop-box:nth-child(6),
+.board .drop-box:nth-child(9) {
+	border-right: none;
+}
+
+.board .drop-box:nth-child(7),
+.board .drop-box:nth-child(8),
+.board .drop-box:nth-child(9) {
+	border-bottom: none;
+}
+
+.drag {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 420px;
+	width: 100px;
+	gap: 10px;
+	background: #fff;
+	margin: 0 40px;
+	cursor: grab;
+}
+
+.drag .drag-box {
+	padding: 15px;
+	background: rgba(255, 255, 255, 0.1);
+}
+
+.drag .drag-box .cross {
+	position: relative;
+	width: 50px;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.drag .drag-box .cross::before {
+	content: "";
+	position: absolute;
+	width: 5px;
+	height: 100%;
+	background: #fff;
+	transform: rotate(45deg);
+}
+
+.drag .drag-box .cross::after {
+	content: "";
+	position: absolute;
+	width: 5px;
+	height: 100%;
+	background: #fff;
+	transform: rotate(45deg);
+}
